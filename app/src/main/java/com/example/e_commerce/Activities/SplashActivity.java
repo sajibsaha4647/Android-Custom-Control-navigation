@@ -2,6 +2,7 @@ package com.example.e_commerce.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
@@ -11,6 +12,7 @@ import com.example.e_commerce.R;
 public class SplashActivity extends AppCompatActivity {
 
     private Handler handler = new Handler();
+    private Intent intent ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,10 +23,11 @@ public class SplashActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
 
-//        handler.postDelayed((Runnable) () -> {
-//          System.out.println("calling after");
-//
-//        }, 2000);
+        handler.postDelayed((Runnable) () -> {
+           intent = new Intent(SplashActivity.this, MainActivity.class);
+            startActivity(intent);
+
+        }, 3000);
 
 
     }
