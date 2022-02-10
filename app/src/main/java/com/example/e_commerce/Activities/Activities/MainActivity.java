@@ -1,4 +1,4 @@
-package com.example.e_commerce.Activities;
+package com.example.e_commerce.Activities.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
@@ -10,7 +10,7 @@ import com.example.e_commerce.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ViewPager viewPager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        viewPager = findViewById(R.id.introid);
+
 
 
     }

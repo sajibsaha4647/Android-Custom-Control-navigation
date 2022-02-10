@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:background="@color/orange"
     android:gravity="center"
-    tools:context=".Activities.SplashActivity">
+    tools:context=".Activities.Activities.SplashActivity">
 
     <TextView
         android:layout_width="match_parent"
