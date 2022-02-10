@@ -29,7 +29,7 @@ public class IntroActivity extends AppCompatActivity  implements ViewPager.OnPag
         Imageviewthree =  findViewById(R.id.third_indicator);
 
 
-        pagerAdapter = new PagerAdapter(getSupportFragmentManager(),0);
+        pagerAdapter = new PagerAdapter(getSupportFragmentManager());
 
         viewPager.setAdapter(pagerAdapter);
 

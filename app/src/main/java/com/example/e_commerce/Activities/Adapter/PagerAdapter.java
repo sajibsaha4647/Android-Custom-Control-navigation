@@ -20,28 +20,30 @@ import java.util.ArrayList;
 
 public class PagerAdapter extends FragmentStatePagerAdapter {
 
-    private ArrayList<Fragment>arrayList = new ArrayList<>();
 
     public PagerAdapter(@NonNull FragmentManager fm) {
         super(fm);
     }
 
-    public PagerAdapter(FragmentManager supportFragmentManager, int i) {
-        super(supportFragmentManager, i);
-    }
-
     @NonNull
     @Override
     public Fragment getItem(int position) {
-        return arrayList.get(position);
+
+        switch (position){
+            case 0:
+                return new FragmentOne();
+            case 1:
+                return new FragmentTwo();
+            case 2:
+                return new FragmentThree();
+            default:
+                return new FragmentOne();
+        }
+
     }
 
     @Override
     public int getCount() {
-        return arrayList.size();
-    }
-
-    public void addFragment(Fragment fragment){
-        arrayList.add(fragment);
+        return 3;
     }
 }
