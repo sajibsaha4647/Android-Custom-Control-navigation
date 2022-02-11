@@ -1,4 +1,4 @@
-package com.example.e_commerce.Activities.Fragments;
+package com.example.e_commerce.Fragments;
 
 import android.os.Bundle;
 
@@ -14,7 +14,7 @@ import com.example.e_commerce.R;
  * A simple {@link Fragment} subclass.
  * create an instance of this fragment.
  */
-public class FragmentThree extends Fragment {
+public class FragmentTwo extends Fragment {
 
 
 
@@ -22,6 +22,6 @@ public class FragmentThree extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_three, container, false);
+        return inflater.inflate(R.layout.fragment_two, container, false);
     }
 }

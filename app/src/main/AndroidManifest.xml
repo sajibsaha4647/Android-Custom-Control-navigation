@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Ecommerce" >
         <activity
-            android:name=".Activities.Activities.IntroActivity"
+            android:name=".Activities.IntroActivity"
             android:exported="true" />
         <activity
-            android:name=".Activities.Activities.SplashActivity"
+            android:name=".Activities.SplashActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activities.Activities.MainActivity"
+            android:name=".Activities.MainActivity"
             android:exported="true" >
         </activity>
     </application>

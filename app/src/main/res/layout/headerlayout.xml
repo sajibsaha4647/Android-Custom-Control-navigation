@@ -3,28 +3,27 @@
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
     android:orientation="horizontal"
+    android:background="@color/hash"
     android:weightSum="5"
     >
 
     <ImageView
         android:id="@+id/menuid"
-        android:layout_weight="1"
-        android:layout_width="0dp"
+        android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_menu"
         android:layout_gravity="center_vertical"
-        android:maxWidth="40dp"
         android:minHeight="40dp"
         />
 
     <EditText
         android:id="@+id/searchid"
-        android:layout_weight="4"
+        android:layout_weight="5"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:hint="What you have search"
         android:background="@drawable/inputback"
-        android:backgroundTint="@color/hash"
+        android:backgroundTint="@color/white"
         android:paddingLeft="10dp"
         />
 

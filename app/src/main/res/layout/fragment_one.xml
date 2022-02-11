@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="5"
-    tools:context=".Activities.Fragments.FragmentOne">
+    tools:context=".Fragments.FragmentOne">
 
     <ImageView
         android:layout_width="match_parent"

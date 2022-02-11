@@ -1,10 +1,8 @@
-package com.example.e_commerce.Activities.Activities;
+package com.example.e_commerce.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 import androidx.viewpager.widget.ViewPager;
 
-import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -13,7 +11,7 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.e_commerce.Activities.Adapter.PagerAdapter;
+import com.example.e_commerce.Adapter.PagerAdapter;
 import com.example.e_commerce.R;
 
 public class IntroActivity extends AppCompatActivity  implements ViewPager.OnPageChangeListener, View.OnClickListener {

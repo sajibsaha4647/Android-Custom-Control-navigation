@@ -1,22 +1,13 @@
-package com.example.e_commerce.Activities.Adapter;
-
-import android.content.Context;
-import android.text.Layout;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+package com.example.e_commerce.Adapter;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
-import com.example.e_commerce.Activities.Fragments.FragmentOne;
-import com.example.e_commerce.Activities.Fragments.FragmentThree;
-import com.example.e_commerce.Activities.Fragments.FragmentTwo;
-
-import java.util.ArrayList;
+import com.example.e_commerce.Fragments.FragmentOne;
+import com.example.e_commerce.Fragments.FragmentThree;
+import com.example.e_commerce.Fragments.FragmentTwo;
 
 public class PagerAdapter extends FragmentStatePagerAdapter {
 
