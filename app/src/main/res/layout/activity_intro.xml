@@ -5,43 +5,73 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:weightSum="3"
     tools:context=".Activities.Activities.IntroActivity">
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewpagerid"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        />
+        android:layout_weight="2" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:gravity="center"
+        android:layout_marginBottom="50dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        android:weightSum="5"
+        >
 
-        <ImageView
-            android:id="@+id/first_indicator"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
-            android:src="@drawable/active_circle" />
 
-        <ImageView
-            android:id="@+id/second_indicator"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
-            android:src="@drawable/disable_circle" />
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:gravity="center"
+           android:layout_weight="5"
+           android:paddingLeft="20dp"
 
-        <ImageView
-            android:id="@+id/third_indicator"
+           >
+           <ImageView
+               android:id="@+id/first_indicator"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginEnd="10dp"
+               android:src="@drawable/active_circle" />
+
+           <ImageView
+               android:id="@+id/second_indicator"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginEnd="10dp"
+               android:src="@drawable/disable_circle" />
+
+           <ImageView
+               android:id="@+id/third_indicator"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:src="@drawable/disable_circle" />
+
+       </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/disable_circle" />
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:paddingHorizontal="20dp"
+            >
+            <TextView
+                android:id="@+id/skipped"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Skip"
+                android:textSize="20dp"
+                android:fontFamily="@font/robotobold"
+                />
+        </LinearLayout>
+
+
+
+
 
     </LinearLayout>
 

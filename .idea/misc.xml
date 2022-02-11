@@ -3,8 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Sajib/AndroidStudioProjects/Ecommerce/app/src/main/res/drawable/disable_circle.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/Sajib/AndroidStudioProjects/Ecommerce/app/src/main/res/drawable/inputback.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/Sajib/AndroidStudioProjects/Ecommerce/app/src/main/res/font/font.xml" value="0.23020833333333332" />
+        <entry key="..\:/Users/Sajib/AndroidStudioProjects/Ecommerce/app/src/main/res/layout/activity_intro.xml" value="0.22" />
+        <entry key="..\:/Users/Sajib/AndroidStudioProjects/Ecommerce/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/Sajib/AndroidStudioProjects/Ecommerce/app/src/main/res/layout/activity_splash.xml" value="0.1859375" />
+        <entry key="..\:/Users/Sajib/AndroidStudioProjects/Ecommerce/app/src/main/res/layout/fragment_one.xml" value="0.2" />
+        <entry key="..\:/Users/Sajib/AndroidStudioProjects/Ecommerce/app/src/main/res/layout/fragment_three.xml" value="0.2" />
+        <entry key="..\:/Users/Sajib/AndroidStudioProjects/Ecommerce/app/src/main/res/layout/fragment_two.xml" value="0.2" />
+        <entry key="..\:/Users/Sajib/AndroidStudioProjects/Ecommerce/app/src/main/res/layout/headerlayout.xml" value="0.2" />
         <entry key="..\:/Users/bdtask/Desktop/e-commerce/Android-E-commerceApp/app/src/main/res/drawable-v24/active_circle.xml" value="0.1" />
         <entry key="..\:/Users/bdtask/Desktop/e-commerce/Android-E-commerceApp/app/src/main/res/drawable/active_circle.xml" value="0.1" />
         <entry key="..\:/Users/bdtask/Desktop/e-commerce/Android-E-commerceApp/app/src/main/res/layout/activity_intro.xml" value="0.3484375" />
