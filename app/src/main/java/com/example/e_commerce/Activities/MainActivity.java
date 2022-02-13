@@ -1,18 +1,21 @@
 package com.example.e_commerce.Activities;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,13 +25,20 @@ import com.example.e_commerce.Fragments.HomeFragment;
 import com.example.e_commerce.Fragments.UserFragment;
 import com.example.e_commerce.Fragments.WishlistFragment;
 import com.example.e_commerce.R;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Fragment fragment ;
-    private RelativeLayout Bottomtab;
-    private ImageView imageCategory,imageWishlist,imageCart,imageUser,imageHome;
+    private ImageView imageCategory,imageWishlist,imageCart,imageUser,imageHome,imageBackicon;
+    private TextView TitleText;
+    private LinearLayout layout,headerLayout;
+    private SharedPreferences SavedatastatePref;
+    private SharedPreferences.Editor editor;
+    String currentFragmentName;
+
+    FragmentManager fragmentManagerback = this.getSupportFragmentManager();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,11 +50,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         window.setStatusBarColor(this.getResources().getColor(R.color.orange));
 
-        fragment = new HomeFragment();
-        FragmentManager fragmentManager = this.getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.ChangeFrame, fragment,null);
-        fragmentTransaction.commit();
 
         imageCategory = findViewById(R.id.home);
         imageCategory.setOnClickListener(this);
@@ -61,51 +66,117 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         imageHome = findViewById(R.id.hom);
         imageHome.setOnClickListener(this);
 
+        TitleText = findViewById(R.id.titleid);
+        imageBackicon = findViewById(R.id.backicon);
+        layout = findViewById(R.id.header_titleid);
+        headerLayout = findViewById(R.id.headerLayout);
+
+
+
+
+        fragment = new HomeFragment();
+        FragmentManager fragmentManager = this.getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.ChangeFrame, fragment,null);
+        fragmentTransaction
+                .commit();
+        layout.setVisibility(View.GONE);
+
+
+
+
+        imageBackicon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                changeBackFragment();
+            }
+        });
 
     }
+
+    private void changeBackFragment() {
+        if (currentFragmentName.equals("hom")){
+            layout.setVisibility(View.GONE);
+            headerLayout.setVisibility(View.VISIBLE);
+        }else {
+            layout.setVisibility(View.VISIBLE);
+            headerLayout.setVisibility(View.GONE);
+        }
+    }
+
+
+    @Override
+    public void onAttachFragment(@NonNull Fragment fragment) {
+        super.onAttachFragment(fragment);
+
+        currentFragmentName=fragment.getTag();
+        Log.wtf("onbackPressed",currentFragmentName);
+        if (currentFragmentName != null){
+            if(currentFragmentName.equals("hom")){
+                layout.setVisibility(View.GONE);
+                headerLayout.setVisibility(View.VISIBLE);
+            }else {
+                layout.setVisibility(View.VISIBLE);
+                headerLayout.setVisibility(View.GONE);
+            }
+        }
+
+
+
+    }
+
+    @Override
+    public void onBackPressed(){
+        Log.wtf("onbackPressed",currentFragmentName);
+        if (getFragmentManager().getBackStackEntryCount() > 0) {
+            getFragmentManager().popBackStack();
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+
+
 
     @Override
     public void onClick(View view) {
 
        switch (view.getId()){
            case R.id.home:
-               fragment = new CategoryFragment();
-               FragmentManager fragmentManager = this.getSupportFragmentManager();
-               FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-               fragmentTransaction.replace(R.id.ChangeFrame, fragment,null);
-               fragmentTransaction.commit();
+               loadFragment(new CategoryFragment(),"category");
+               TitleText.setText("Category");
               break;
            case R.id.home1:
-               fragment = new WishlistFragment();
-               FragmentManager fragmentManager1 = this.getSupportFragmentManager();
-               FragmentTransaction fragmentTransaction1 = fragmentManager1.beginTransaction();
-               fragmentTransaction1.replace(R.id.ChangeFrame, fragment,null);
-               fragmentTransaction1.commit();
+               loadFragment(new WishlistFragment(),"wise_list");
+               TitleText.setText("Wishlist");
                break;
            case R.id.home3:
-               fragment = new CartFragment();
-               FragmentManager fragmentManager2 = this.getSupportFragmentManager();
-               FragmentTransaction fragmentTransaction2 = fragmentManager2.beginTransaction();
-               fragmentTransaction2.replace(R.id.ChangeFrame, fragment,null);
-               fragmentTransaction2.commit();
+               loadFragment(new CartFragment(),"cart");
+               TitleText.setText("Cart");
                break;
            case R.id.home4:
-               fragment =new UserFragment();
-               FragmentManager fragmentManager3 = this.getSupportFragmentManager();
-               FragmentTransaction fragmentTransaction3 = fragmentManager3.beginTransaction();
-               fragmentTransaction3.replace(R.id.ChangeFrame, fragment,null);
-               fragmentTransaction3.commit();
+               loadFragment(new UserFragment(),"account");
+               TitleText.setText("Account");
                break;
            case R.id.hom:
-               fragment =new HomeFragment();
-               FragmentManager fragmentManager4 = this.getSupportFragmentManager();
-               FragmentTransaction fragmentTransaction4 = fragmentManager4.beginTransaction();
-               fragmentTransaction4.replace(R.id.ChangeFrame, fragment,null);
-               fragmentTransaction4.commit();
+               loadFragment(new UserFragment(),"hom");
                break;
+
 
 
        }
+    }
+    public boolean loadFragment(Fragment fragment,String fragmentName) {
+        if (fragment != null){
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .replace(R.id.ChangeFrame,fragment,fragmentName)
+                    .addToBackStack(fragmentName)
+                    .commit();
 
+            return true;
+        }
+        return false;
     }
 }
