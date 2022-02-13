@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-
+    android:id="@+id/Tabid"
     >
 
     <LinearLayout
@@ -37,9 +37,11 @@
                     android:layout_centerHorizontal="true"
                     />
                 <TextView
+                    android:id="@+id/homeText"
                     android:layout_below="@+id/home"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="center"
                     android:text="Category"
                     android:layout_centerHorizontal="true"
                     />
@@ -59,8 +61,9 @@
                     android:src="@drawable/wishlist" />
                 <TextView
                     android:layout_below="@+id/home1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="center"
                     android:text="Wishlist"
                     android:layout_centerHorizontal="true"
                     />
@@ -90,8 +93,9 @@
                     />
                 <TextView
                     android:layout_below="@+id/home3"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="center"
                     android:text="Cart"
                     android:layout_centerHorizontal="true"
                     />
@@ -112,8 +116,9 @@
                     />
                 <TextView
                     android:layout_below="@+id/home4"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="center"
                     android:text="User"
                     android:layout_centerHorizontal="true"
                     />

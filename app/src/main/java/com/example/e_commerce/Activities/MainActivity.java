@@ -9,17 +9,26 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.e_commerce.Fragments.CartFragment;
+import com.example.e_commerce.Fragments.CategoryFragment;
 import com.example.e_commerce.Fragments.HomeFragment;
+import com.example.e_commerce.Fragments.UserFragment;
+import com.example.e_commerce.Fragments.WishlistFragment;
 import com.example.e_commerce.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Fragment fragment ;
-
-    private LinearLayout Bottomtab;
+    private RelativeLayout Bottomtab;
+    private ImageView imageCategory,imageWishlist,imageCart,imageUser,imageHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,12 +46,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         fragmentTransaction.replace(R.id.ChangeFrame, fragment,null);
         fragmentTransaction.commit();
 
-        Bottomtab = findViewById(R.id.Bottomtabid);
+        imageCategory = findViewById(R.id.home);
+        imageCategory.setOnClickListener(this);
 
+        imageWishlist = findViewById(R.id.home1);
+        imageWishlist.setOnClickListener(this);
 
-        Bottomtab.setOnClickListener(this);
+        imageCart = findViewById(R.id.home3);
+        imageCart.setOnClickListener(this);
 
+        imageUser = findViewById(R.id.home4);
+        imageUser.setOnClickListener(this);
 
+        imageHome = findViewById(R.id.hom);
+        imageHome.setOnClickListener(this);
 
 
     }
@@ -50,9 +67,45 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
 
-        if(view.getId() == R.id.categoryid){
-            Toast.makeText(MainActivity.this,"category clickc",Toast.LENGTH_SHORT).show();
-        }
+       switch (view.getId()){
+           case R.id.home:
+               fragment = new CategoryFragment();
+               FragmentManager fragmentManager = this.getSupportFragmentManager();
+               FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+               fragmentTransaction.replace(R.id.ChangeFrame, fragment,null);
+               fragmentTransaction.commit();
+              break;
+           case R.id.home1:
+               fragment = new WishlistFragment();
+               FragmentManager fragmentManager1 = this.getSupportFragmentManager();
+               FragmentTransaction fragmentTransaction1 = fragmentManager1.beginTransaction();
+               fragmentTransaction1.replace(R.id.ChangeFrame, fragment,null);
+               fragmentTransaction1.commit();
+               break;
+           case R.id.home3:
+               fragment = new CartFragment();
+               FragmentManager fragmentManager2 = this.getSupportFragmentManager();
+               FragmentTransaction fragmentTransaction2 = fragmentManager2.beginTransaction();
+               fragmentTransaction2.replace(R.id.ChangeFrame, fragment,null);
+               fragmentTransaction2.commit();
+               break;
+           case R.id.home4:
+               fragment =new UserFragment();
+               FragmentManager fragmentManager3 = this.getSupportFragmentManager();
+               FragmentTransaction fragmentTransaction3 = fragmentManager3.beginTransaction();
+               fragmentTransaction3.replace(R.id.ChangeFrame, fragment,null);
+               fragmentTransaction3.commit();
+               break;
+           case R.id.hom:
+               fragment =new HomeFragment();
+               FragmentManager fragmentManager4 = this.getSupportFragmentManager();
+               FragmentTransaction fragmentTransaction4 = fragmentManager4.beginTransaction();
+               fragmentTransaction4.replace(R.id.ChangeFrame, fragment,null);
+               fragmentTransaction4.commit();
+               break;
+
+
+       }
 
     }
 }
