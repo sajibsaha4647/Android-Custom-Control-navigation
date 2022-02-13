@@ -64,18 +64,22 @@ public class IntroActivity extends AppCompatActivity  implements ViewPager.OnPag
                 imageviewOne.setImageResource(R.drawable.active_circle);
                 ImageviewTwo.setImageResource(R.drawable.disable_circle);
                 Imageviewthree.setImageResource(R.drawable.disable_circle);
+                break;
             case 1:
                 ImageviewTwo.setImageResource(R.drawable.active_circle);
                 imageviewOne.setImageResource(R.drawable.disable_circle);
                 Imageviewthree.setImageResource(R.drawable.disable_circle);
+                break;
             case 2:
                 Imageviewthree.setImageResource(R.drawable.active_circle);
                 imageviewOne.setImageResource(R.drawable.disable_circle);
                 ImageviewTwo.setImageResource(R.drawable.disable_circle);
+                break;
             default:
                 imageviewOne.setImageResource(R.drawable.active_circle);
                 ImageviewTwo.setImageResource(R.drawable.disable_circle);
                 Imageviewthree.setImageResource(R.drawable.disable_circle);
+                break;
         }
 
 

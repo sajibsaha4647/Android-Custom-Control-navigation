@@ -18,6 +18,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="28dp"
+            android:paddingVertical="10dp"
             android:background="@color/white"
             >
 
@@ -25,14 +26,14 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-
+                android:id="@+id/categoryid"
                 >
 
                 <ImageView
                     android:id="@+id/home"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_category"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/category"
                     android:layout_centerHorizontal="true"
                     />
                 <TextView
@@ -52,15 +53,15 @@
 
                 <ImageView
                     android:id="@+id/home1"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:layout_centerHorizontal="true"
-                    android:src="@drawable/ic_category" />
+                    android:src="@drawable/wishlist" />
                 <TextView
                     android:layout_below="@+id/home1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Category"
+                    android:text="Wishlist"
                     android:layout_centerHorizontal="true"
                     />
 
@@ -82,16 +83,16 @@
 
                 <ImageView
                     android:id="@+id/home3"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_category"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/cart"
                     android:layout_centerHorizontal="true"
                     />
                 <TextView
                     android:layout_below="@+id/home3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Category"
+                    android:text="Cart"
                     android:layout_centerHorizontal="true"
                     />
 
@@ -104,16 +105,16 @@
 
                 <ImageView
                     android:id="@+id/home4"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/ic_category"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/user"
                     android:layout_centerHorizontal="true"
                     />
                 <TextView
                     android:layout_below="@+id/home4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Category"
+                    android:text="User"
                     android:layout_centerHorizontal="true"
                     />
 
@@ -128,24 +129,25 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="25dp"
         android:layout_centerHorizontal="true"
         >
 
         <androidx.cardview.widget.CardView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="66dp"
+            android:layout_height="66dp"
             android:background="@color/orange"
             android:backgroundTint="@color/orange"
-            app:cardCornerRadius="500dp"
-            >
+            android:layout_marginBottom="5dp"
+            app:cardCornerRadius="500dp">
+
             <ImageView
                 android:id="@+id/hom"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/ic_category"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center"
-                />
+                android:src="@drawable/ic_category"
+                app:tint="@color/white" />
         </androidx.cardview.widget.CardView>
 
     </RelativeLayout>
